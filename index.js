@@ -224,15 +224,15 @@ Write a function called `getReviewByRating` that returns an array containing all
 let reviewArray = []
 
 function getReviewByRating (arr, rating) {
-  for (let i = 0; i < reviews.length; i++) {
-    if (reviews[i].rating === rating) {
-      reviewArray.push(reviews[i])
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].rating === rating) {
+      reviewArray.push(arr[i])
     }
   }
   return reviewArray
 }
 
-// console.log(getReviewByRating(reviews, 4))
+console.log(getReviewByRating(reviews, 4))
 /*
 ----------------------------- Stretch 2 -----------------------------
 
@@ -241,20 +241,36 @@ Write a function called 'getLongestReview' that returns an array containing all 
 Your function should accept:
 
   (1) An array of objects
-
-and should return an array of objects. 
+and
+  (1) Should return an array of objects.
 
   For example, invoking getLongReviews(reviews) would return [
     {name: 'Wen', rating: 4.5, feedback:'I don't leave my house often, but when I do, it's for this place. Highly reccomend.'},
     {name: 'Brett', rating: 3, feedback: 'great selection of snacks and a nice cafe area to get work done during the day.'},
     {name: 'Julius', rating: 2, feedback: 'I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it.' }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
-  }
-  
+const longReviewsArr = []
 
-/* STRETCH 3:  This challenge is not related to the data above! 
+function countWords (str) {
+  str = str.replace(/(^\s*)|(\s*$)/gi, '')
+  str = str.replace(/[ ]{2,}/gi, ' ')
+  str = str.replace(/\n /, '\n')
+  return str.split(' ').length
+}
+function getLongReviews (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (countWords(arr[i].feedback) > 15) {
+      longReviewsArr.push(arr[i])
+    }
+  }
+  return longReviewsArr
+}
+console.log(getLongReviews(reviews))
+
+/*
+----------------------------- Stretch 2 -----------------------------
+
+This challenge is not related to the data above!
 
 Write a function called carMarker 
 
