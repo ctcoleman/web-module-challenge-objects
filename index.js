@@ -272,13 +272,13 @@ console.log(getLongReviews(reviews))
 
 This challenge is not related to the data above!
 
-Write a function called carMarker 
+Write a function called carMarker
 
 Your function should accept:
 
-(1) a single odometer argument (a number) 
-
-and return an object.
+(1) a single odometer argument (a number)
+and
+(2) return an object.
 
 The returned object should have the following characteristics:
      it has an `odometer` property that contains the argument passed in.
@@ -287,9 +287,14 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
-
-// function carMaker(/* code here */) {
-//     /* code here */
-    
-// }
-// 
+function carMaker (odometerNum) {
+  const carOdometer = {
+    odometer: odometerNum,
+    drive: function (distance) {
+      const odometerNum = this.odometer + distance
+      return odometerNum
+    }
+  }
+  return carOdometer.odometer
+}
+console.log(carMaker(100))
