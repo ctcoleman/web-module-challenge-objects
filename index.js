@@ -221,11 +221,18 @@ Write a function called `getReviewByRating` that returns an array containing all
     {name: 'Wen', rating: 4.5, feedback:'I don't leave my house often, but when I do, it's for this place. Highly reccomend.'},
     {name:'Lauren', rating: 4, feedback: 'Absolutely love that they have karaoke Fridays! Food and drink selection is okay.'}]
 */
+let reviewArray = []
 
-function getReviewByRating () {
-
+function getReviewByRating (arr, rating) {
+  for (let i = 0; i < reviews.length; i++) {
+    if (reviews[i].rating === rating) {
+      reviewArray.push(reviews[i])
+    }
+  }
+  return reviewArray
 }
 
+// console.log(getReviewByRating(reviews, 4))
 /*
 ----------------------------- Stretch 2 -----------------------------
 
@@ -265,7 +272,8 @@ The returned object should have the following characteristics:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+// function carMaker(/* code here */) {
+//     /* code here */
     
-}
+// }
+// 
