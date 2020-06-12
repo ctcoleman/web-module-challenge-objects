@@ -286,9 +286,10 @@ The returned object should have the following characteristics:
          (1) causes the odometer in the object to be increased by the distance,
          (2) returns the updated value of the `odometer`.
 */
+let carOdometer = []
 
 function carMaker (odometerNum) {
-  const carOdometer = {
+  carOdometer = {
     odometer: odometerNum,
     drive: function (distance) {
       const odometerNum = this.odometer + distance
@@ -298,3 +299,6 @@ function carMaker (odometerNum) {
   return carOdometer.odometer
 }
 console.log(carMaker(100))
+console.log(carOdometer.drive(500))
+console.log(carMaker(500))
+console.log(carOdometer.drive(500))
